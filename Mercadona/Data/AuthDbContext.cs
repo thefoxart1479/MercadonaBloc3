@@ -14,27 +14,27 @@ namespace Mercadona_V3.Data
         {
             base.OnModelCreating(builder);
 
-            var adminRoleId = "054e0b7d-8297-432d-b73f-afc0138c44f4";
+            var adminRoleId = "";
             var adminRole = new IdentityRole
             {
-                Name = "Admin",
-                NormalizedName = "Admin",
+                Name = "",
+                NormalizedName = "",
                 Id = adminRoleId,
                 ConcurrencyStamp = adminRoleId
             };
 
             builder.Entity<IdentityRole>().HasData(adminRole);
 
-            var adminUserId = "25033cc8-f09e-4d5f-a0c7-c50a724fa5c1";
+            var adminUserId = "";
             var adminUser = new IdentityUser
             {
-                UserName = "adminmercadona",
-                Email = "admin@mercadona.com",
-                NormalizedEmail = "admin@mercadona.com".ToUpper(),
-                NormalizedUserName = "adminmercadona".ToUpper(),
+                UserName = "",
+                Email = "",
+                NormalizedEmail = "".ToUpper(),
+                NormalizedUserName = "".ToUpper(),
                 Id = adminUserId,
             };
-            adminUser.PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(adminUser, "mercadonaBloc3");
+            adminUser.PasswordHash = new PasswordHasher<IdentityUser>().HashPassword(adminUser, "");
 
             builder.Entity<IdentityUser>().HasData(adminUser);
 
