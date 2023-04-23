@@ -1,0 +1,45 @@
+﻿@model Mercadona_V1.Models.ViewModels.Categorie.EditCategorieRequest
+
+@{
+    ViewData["Title"] = "Modification de la catégorie";
+}
+
+<div class="bg-secondary bg-opacity-10 py-2">
+    <div class="container">
+        <h1> Modification de la catégorie </h1>
+    </div>
+</div>
+
+<div class="container py-5">
+
+    @if(Model != null)
+    {
+        <form method="post">
+
+            <div class="mb-3" style="display:none">
+                <input type="text" id="categorieID" class="form-control" asp-for="categorieID" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"> Libelle </label>
+                <input type="text" id="libelle" class="form-control" asp-for="libelle" />
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-dark"> Modifier </button>
+                <button type="submit" class="btn btn-danger ms-2" asp-area="" 
+                    asp-controller="Categorie" asp-action="Delete"> Supprimer </button>
+            </div>
+
+        </form>
+    }
+    else
+    {
+        <p> Catégorie non trouvée </p>
+    }
+
+    <a asp-area="" asp-controller="Categorie" asp-action="List">
+        Retour à la liste
+    </a>
+
+</div>
